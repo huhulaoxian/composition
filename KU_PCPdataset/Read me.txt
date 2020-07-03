@@ -1,0 +1,7 @@
+Images are used for photographic composition classification.
+The ground truth labels are described in the ground truth files: 'test_label.txt' and 'train_label.txt'.
+In the files, a binary row represent the ground truth information of an image, where corresponding composition labels are set 1, otherwise 0.
+The order of composition rules are as follows: rule of thirds(RoT), vertical, horizontal, diagonal, curved, triangle, center, symmetric, and pattern.
+
+
+
