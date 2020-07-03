@@ -1,0 +1,352 @@
+python main.py -a alexnet -er -j 16 --weights ./weights/ft_baseline_CNN1/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1/ --log-name rotate_pro.log
+python main.py -a alexnet -ec -j 16 --weights ./weights/ft_baseline_CNN1/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1/ --log-name consist.log
+
+# train
+python main.py -a alexnet -j 16 --epochs 100 --lr 0.001 --momentum 0.9 --pretrained --gpu 1 --no-data-aug --out-dir ./weights/ft_baseline_CNN1/ --log-name train.log
+python main.py -a alexnet -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --gpu 1 --out-dir ./weights/ft_baseline_CNN01_aug/ --log-name train.log
+python main.py -a alexnet -j 16 --epochs 100 --lr 0.001 --momentum 0.9 --pretrained --gpu 1 --out-dir ./weights/ft_baseline_CNN1_aug/ --log-name train.log
+python main.py -a alexnet_lpf -f 2 -j 16 --epochs 100 --weights ./weights/alexnet_r_2.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --no-data-aug --out-dir ./weights/ft_alexnet_lpf2_CNN01/ --log-name train.log
+python main.py -a alexnet_lpf -f 2 -j 16 --epochs 100 --weights ./weights/alexnet_r_2.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --out-dir ./weights/ft_alexnet_lpf2_CNN01_aug/ --log-name train.log
+python main.py -a alexnet_lpf -f 3 -j 16 --epochs 100 --weights ./weights/alexnet_r_3.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --no-data-aug --out-dir ./weights/ft_alexnet_lpf3_CNN01/ --log-name train.log
+python main.py -a alexnet_lpf -f 3 -j 16 --epochs 100 --weights ./weights/alexnet_r_3.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --out-dir ./weights/ft_alexnet_lpf3_CNN01_aug/ --log-name train.log
+python main.py -a alexnet_lpf -f 5 -j 16 --epochs 100 --weights ./weights/alexnet_lpf5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --no-data-aug --out-dir ./weights/ft_alexnet_lpf5_CNN01/ --log-name train.log
+python main.py -a alexnet_lpf -f 5 -j 16 --epochs 100 --weights ./weights/alexnet_lpf5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --out-dir ./weights/ft_alexnet_lpf5_CNN01_aug/ --log-name train.log
+
+python main.py -a vgg16 -j 16 --epochs 100 --lr 0.001 --momentum 0.9 --pretrained --gpu 1 --no-data-aug --out-dir ./weights/ft_vgg_CNN/ --log-name train.log
+python main.py -a vgg16 -j 16 --epochs 100 --lr 0.001 --momentum 0.9 --pretrained --gpu 1 --out-dir ./weights/ft_vgg_CNN_aug/ --log-name train.log
+python main.py -a vgg16_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_r_5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --no-data-aug --out-dir ./weights/ft_vgg16_lpf5_CNN01/ --log-name train.log
+python main.py -a vgg16_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_r_5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --out-dir ./weights/ft_vgg16_lpf5_CNN_aug/ --log-name train.log
+
+python main.py -a vgg16_bn -j 16 --epochs 100 --lr 0.001 --momentum 0.9 --pretrained --gpu 1 --no-data-aug --out-dir ./weights/ft_vgg_bn_CNN/ --log-name train.log
+python main.py -a vgg16_bn -j 16 --epochs 100 --lr 0.001 --momentum 0.9 --pretrained --gpu 1 --out-dir ./weights/ft_vgg_bn_CNN_aug/ --log-name train.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_bn_r_5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --no-data-aug --out-dir ./weights/ft_vgg16_bn_lpf5_CNN01/ --log-name train.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_bn_r_5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --out-dir ./weights/ft_vgg16_bn_lpf5_CNN_aug/ --log-name train.log
+
+
+python main.py -a resnet50 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --gpu 1 --no-data-aug --out-dir ./weights/ft_resnet50_CNN/ --log-name train.log
+python main.py -a resnet50 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --gpu 1 --out-dir ./weights/ft_resnet50_CNN_aug/ --log-name train.log
+python main.py -a resnet50_lpf -f 5 -j 16 --epochs 100 --weights ./weights/resnet50_r_5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --no-data-aug --out-dir ./weights/ft_resnet50_lpf5_CNN01/ --log-name train.log
+python main.py -a resnet50_lpf -f 5 -j 16 --epochs 100 --weights ./weights/resnet50_r_5.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --out-dir ./weights/ft_resnet50_lpf5_CNN_aug/ --log-name train.log
+python main.py -a resnet50_lpf -f 5 -j 16 --epochs 100 --weights ./weights/ft_resnet50_lpf5_CNN01/model_best.pth.tar --lr 0.01 --momentum 0.9 --gpu 0 --out-dir ./weights/ft_resnet50_lpf5_CNN_aug/ --log-name train.log
+
+python main.py -a resnet101 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --gpu 1 --no-data-aug --out-dir ./weights/ft_resnet101_CNN/ --log-name train.log
+python main.py -a resnet101 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --gpu 1 --out-dir ./weights/ft_resnet101_CNN_aug/ --log-name train.log
+python main.py -a resnet101_lpf -f 5 -j 16 --epochs 100 --weights ./weights/resnet101_r_5.pth.tar --lr 0.01 --momentum 0.9 --gpu 0 --no-data-aug --out-dir ./weights/ft_resnet101_lpf5_CNN01/ --log-name train.log
+python main.py -a resnet101_lpf -f 5 -j 16 --epochs 100 --weights ./weights/ft_resnet101_lpf5_CNN01/model_best.pth.tar --lr 0.01 --momentum 0.9 --gpu 2 --out-dir ./weights/ft_resnet101_lpf5_CNN_aug/ --log-name train.log
+
+
+# consist
+python main.py -a alexnet -ec -j 16 --weights ./weights/ft_baseline_CNN1/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1/ --log-name consist.log
+python main.py -a alexnet -ec -j 16 --weights ./weights/ft_baseline_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN01/ --log-name consist.log
+python main.py -a alexnet -ec -j 16 --weights ./weights/ft_baseline_CNN1_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1_aug/ --log-name consist.log
+python main.py -a alexnet_lpf -f 2 -ec -j 16 --weights ./weights/ft_alexnet_lpf2_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf2_CNN01/ --log-name consist.log
+python main.py -a alexnet_lpf -f 2 -ec -j 16 --weights ./weights/ft_alexnet_lpf2_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf2_CNN01_aug/ --log-name consist.log
+python main.py -a alexnet_lpf -f 3 -ec -j 16 --weights ./weights/ft_alexnet_lpf3_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf3_CNN01/ --log-name consist.log
+python main.py -a alexnet_lpf -f 3 -ec -j 16 --weights ./weights/ft_alexnet_lpf3_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf3_CNN01_aug/ --log-name consist.log
+python main.py -a alexnet_lpf -f 5 -ec -j 16 --weights ./weights/ft_alexnet_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf5_CNN01/ --log-name consist.log
+python main.py -a alexnet_lpf -f 5 -ec -j 16 --weights ./weights/ft_alexnet_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf5_CNN01_aug/ --log-name consist.log
+
+python main.py -a vgg16 -ec -j 16 --weights ./weights/ft_vgg_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_CNN/ --log-name consist.log
+python main.py -a vgg16 -ec -j 16 --weights ./weights/ft_vgg_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_CNN_aug/ --log-name consist.log
+python main.py -a vgg16_lpf -f 5 -ec -j 16 --weights ./weights/ft_vgg16_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_lpf5_CNN01/ --log-name consist.log
+python main.py -a vgg16_lpf -f 5 -ec -j 16 --weights ./weights/ft_vgg16_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_lpf5_CNN01_aug/ --log-name consist.log
+python main.py -a vgg16_bn -ec -j 16 --weights ./weights/ft_vgg_bn_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_bn_CNN/ --log-name consist.log
+python main.py -a vgg16_bn -ec -j 16 --weights ./weights/ft_vgg_bn_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_bn_CNN_aug/ --log-name consist.log
+python main.py -a vgg16_bn_lpf -f 5 -ec -j 16 --weights ./weights/ft_vgg16_bn_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_bn_lpf5_CNN01/ --log-name consist.log
+python main.py -a vgg16_bn_lpf -f 5 -ec -j 16 --weights ./weights/ft_vgg16_bn_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_bn_lpf5_CNN01_aug/ --log-name consist.log
+
+python main.py -a resnet50 -ec -j 16 --weights ./weights/ft_resnet50_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_CNN/ --log-name consist.log
+python main.py -a resnet50 -ec -j 16 --weights ./weights/ft_resnet50_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_CNN_aug/ --log-name consist.log
+python main.py -a resnet50_lpf -f 5 -ec -j 16 --weights ./weights/ft_resnet50_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_lpf5_CNN01/ --log-name consist.log
+python main.py -a resnet50_lpf -f 5 -ec -j 16 --weights ./weights/ft_resnet50_lpf5_CNN01_aug/model_best.pth.tar --gpu 0 --out-dir ./weights/ft_resnet50_lpf5_CNN01_aug/ --log-name consist.log
+
+python main.py -a resnet101 -ec -j 16 --weights ./weights/ft_resnet101_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_CNN/ --log-name consist.log
+python main.py -a resnet101 -ec -j 16 --weights ./weights/ft_resnet101_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_CNN_aug/ --log-name consist.log
+python main.py -a resnet101_lpf -f 5 -ec -j 16 --weights ./weights/ft_resnet101_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_lpf5_CNN01/ --log-name consist.log
+python main.py -a resnet101_lpf -f 5 -ec -j 16 --weights ./weights/ft_resnet101_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_lpf5_CNN01_aug/ --log-name consist.log
+
+
+# rotate
+python main.py -a alexnet -er -j 16 --weights ./weights/ft_baseline_CNN1/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1/ --log-name rotate.log
+python main.py -a alexnet -er -j 16 --weights ./weights/ft_baseline_CNN1_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1_aug/ --log-name rotate.log
+python main.py -a alexnet_lpf -f 2 -er -j 16 --weights ./weights/ft_alexnet_lpf2_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf2_CNN01/ --log-name rotate.log
+python main.py -a alexnet_lpf -f 2 -er -j 16 --weights ./weights/ft_alexnet_lpf2_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf2_CNN01_aug/ --log-name rotate.log
+python main.py -a alexnet_lpf -f 3 -er -j 16 --weights ./weights/ft_alexnet_lpf3_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf3_CNN01/ --log-name rotate.log
+python main.py -a alexnet_lpf -f 3 -er -j 16 --weights ./weights/ft_alexnet_lpf3_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf3_CNN01_aug/ --log-name rotate.log
+python main.py -a alexnet_lpf -f 5 -er -j 16 --weights ./weights/ft_alexnet_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf5_CNN01/ --log-name rotate.log
+python main.py -a alexnet_lpf -f 5 -er -j 16 --weights ./weights/ft_alexnet_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf5_CNN01_aug/ --log-name rotate.log
+
+python main.py -a vgg16 -er -j 16 --weights ./weights/ft_vgg_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_CNN/ --log-name rotate.log
+python main.py -a vgg16 -er -j 16 --weights ./weights/ft_vgg_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_CNN_aug/ --log-name rotate.log
+python main.py -a vgg16_lpf -f 5 -er -j 16 --weights ./weights/ft_vgg16_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_lpf5_CNN01/ --log-name rotate.log
+python main.py -a vgg16_lpf -f 5 -er -j 16 --weights ./weights/ft_vgg16_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_lpf5_CNN01_aug/ --log-name rotate.log
+python main.py -a vgg16_bn -er -j 16 --weights ./weights/ft_vgg_bn_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_bn_CNN/ --log-name rotate.log
+python main.py -a vgg16_bn -er -j 16 --weights ./weights/ft_vgg_bn_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_bn_CNN_aug/ --log-name rotate.log
+python main.py -a vgg16_bn_lpf -f 5 -er -j 16 --weights ./weights/ft_vgg16_bn_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_bn_lpf5_CNN01/ --log-name rotate.log
+python main.py -a vgg16_bn_lpf -f 5 -er -j 16 --weights ./weights/ft_vgg16_bn_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_bn_lpf5_CNN01_aug/ --log-name rotate.log
+
+python main.py -a resnet50 -er -j 16 --weights ./weights/ft_resnet50_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_CNN/ --log-name rotate.log
+python main.py -a resnet50 -er -j 16 --weights ./weights/ft_resnet50_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_CNN_aug/ --log-name rotate.log
+python main.py -a resnet50_lpf -f 5 -er -j 16 --weights ./weights/ft_resnet50_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_lpf5_CNN01/ --log-name rotate.log
+python main.py -a resnet50_lpf -f 5 -er -j 16 --weights ./weights/ft_resnet50_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_lpf5_CNN01_aug/ --log-name rotate.log
+
+python main.py -a resnet101 -er -j 16 --weights ./weights/ft_resnet101_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_CNN/ --log-name rotate.log
+python main.py -a resnet101 -er -j 16 --weights ./weights/ft_resnet101_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_CNN_aug/ --log-name rotate.log
+python main.py -a resnet101_lpf -f 5 -er -j 16 --weights ./weights/ft_resnet101_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_lpf5_CNN01/ --log-name rotate.log
+python main.py -a resnet101_lpf -f 5 -er -j 16 --weights ./weights/ft_resnet101_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_lpf5_CNN01_aug/ --log-name rotate.log
+
+# random rotate
+python main.py -a alexnet -erand -j 16 --weights ./weights/ft_baseline_CNN1/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1/ --log-name random_rotate.log
+python main.py -a alexnet -erand -j 16 --weights ./weights/ft_baseline_CNN1_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_baseline_CNN1_aug/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 2 -erand -j 16 --weights ./weights/ft_alexnet_lpf2_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf2_CNN01/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 2 -erand -j 16 --weights ./weights/ft_alexnet_lpf2_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf2_CNN01_aug/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 3 -erand -j 16 --weights ./weights/ft_alexnet_lpf3_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf3_CNN01/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 3 -erand -j 16 --weights ./weights/ft_alexnet_lpf3_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf3_CNN01_aug/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 5 -erand -j 16 --weights ./weights/ft_alexnet_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf5_CNN01/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 5 -erand -j 16 --weights ./weights/ft_alexnet_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_alexnet_lpf5_CNN01_aug/ --log-name random_rotate.log
+
+python main.py -a vgg16 -erand -j 16 --weights ./weights/ft_vgg_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_CNN/ --log-name random_rotate.log
+python main.py -a vgg16 -erand -j 16 --weights ./weights/ft_vgg_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_CNN_aug/ --log-name random_rotate.log
+python main.py -a vgg16_lpf -f 5 -erand -j 16 --weights ./weights/ft_vgg16_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_lpf5_CNN01/ --log-name random_rotate.log
+python main.py -a vgg16_lpf -f 5 -erand -j 16 --weights ./weights/ft_vgg16_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_lpf5_CNN01_aug/ --log-name random_rotate.log
+python main.py -a vgg16_bn -erand -j 16 --weights ./weights/ft_vgg_bn_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_bn_CNN/ --log-name random_rotate.log
+python main.py -a vgg16_bn -erand -j 16 --weights ./weights/ft_vgg_bn_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg_bn_CNN_aug/ --log-name random_rotate.log
+python main.py -a vgg16_bn_lpf -f 5 -erand -j 16 --weights ./weights/ft_vgg16_bn_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_bn_lpf5_CNN01/ --log-name random_rotate.log
+python main.py -a vgg16_bn_lpf -f 5 -erand -j 16 --weights ./weights/ft_vgg16_bn_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_vgg16_bn_lpf5_CNN01_aug/ --log-name random_rotate.log
+
+python main.py -a resnet50 -erand -j 16 --weights ./weights/ft_resnet50_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_CNN/ --log-name random_rotate.log
+python main.py -a resnet50 -erand -j 16 --weights ./weights/ft_resnet50_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_CNN_aug/ --log-name random_rotate.log
+python main.py -a resnet50_lpf -f 5 -erand -j 16 --weights ./weights/ft_resnet50_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_lpf5_CNN01/ --log-name random_rotate.log
+python main.py -a resnet50_lpf -f 5 -erand -j 16 --weights ./weights/ft_resnet50_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet50_lpf5_CNN01_aug/ --log-name random_rotate.log
+
+python main.py -a resnet101 -erand -j 16 --weights ./weights/ft_resnet101_CNN/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_CNN/ --log-name random_rotate.log
+python main.py -a resnet101 -erand -j 16 --weights ./weights/ft_resnet101_CNN_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_CNN_aug/ --log-name random_rotate.log
+python main.py -a resnet101_lpf -f 5 -erand -j 16 --weights ./weights/ft_resnet101_lpf5_CNN01/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_lpf5_CNN01/ --log-name random_rotate.log
+python main.py -a resnet101_lpf -f 5 -erand -j 16 --weights ./weights/ft_resnet101_lpf5_CNN01_aug/model_best.pth.tar --gpu 1 --out-dir ./weights/ft_resnet101_lpf5_CNN01_aug/ --log-name random_rotate.log
+
+#retrain
+python main.py -a alexnet -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --distortion --gpu 1 --no-data-aug --out-dir ./weights/baseline_CNN01/ --log-name train.log
+python main.py -a alexnet -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --distortion --gpu 1 --out-dir ./weights/baseline_CNN01_aug/ --log-name train.log
+python main.py -a alexnet -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --distortion --multi --gpu 3 --no-data-aug --out-dir ./weights/baseline_multi_CNN01/ --log-name train.log
+python main.py -a alexnet -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --pretrained --distortion --multi --gpu 3 --out-dir ./weights/baseline_multi_CNN01_aug/ --log-name train.log
+python main.py -a alexnet_lpf -f 2 -j 16 --epochs 100 --weights ./weights/alexnet_r_2.pth.tar --distortion --multi --lr 0.01 --momentum 0.9 --gpu 2 --no-data-aug --out-dir ./weights/alexnet_lpf2_CNN01/ --log-name train.log
+python main.py -a alexnet_lpf -f 2 -j 16 --epochs 100 --weights ./weights/alexnet_lpf2_CNN01/model_best.pth.tar --distortion --multi --lr 0.001 --momentum 0.9 --gpu 2 --out-dir ./weights/alexnet_lpf2_CNN01_aug/ --log-name train.log
+
+python main.py -a vgg16 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --no-data-aug --out-dir ./weights/vgg_CNN/ --log-name train.log
+python main.py -a vgg16 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --out-dir ./weights/vgg_CNN_aug/ --log-name train.log
+python main.py -a vgg16_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_r_5.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 2 --no-data-aug --out-dir ./weights/vgg16_lpf5_CNN/ --log-name train.log
+python main.py -a vgg16_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_lpf5_CNN/model_best.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 2 --out-dir ./weights/vgg16_lpf5_CNN_aug/ --log-name train.log
+
+python main.py -a vgg16_bn -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --no-data-aug --out-dir ./weights/vgg_bn_CNN/ --log-name train.log
+python main.py -a vgg16_bn -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --out-dir ./weights/vgg_bn_CNN_aug/ --log-name train.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_bn_r_5.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 0 --no-data-aug --out-dir ./weights/vgg16_bn_lpf5_CNN/ --log-name train.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 --epochs 100 --weights ./weights/vgg16_bn_lpf5_CNN/model_best.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 2 --out-dir ./weights/vgg16_bn_lpf5_CNN_aug/ --log-name train.log
+
+
+python main.py -a resnet50 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --no-data-aug --out-dir ./weights/resnet50_CNN/ --log-name train.log
+python main.py -a resnet50 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --out-dir ./weights/resnet50_CNN_aug/ --log-name train.log
+python main.py -a resnet50_lpf -f 5 -j 16 --epochs 100 --weights ./weights/resnet50_r_5.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 2 --no-data-aug --out-dir ./weights/resnet50_lpf5_CNN/ --log-name train.log
+python main.py -a resnet50_lpf -f 5 -j 16 --epochs 100 --weights ./weights/resnet50_lpf5_CNN/model_best.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 2 --out-dir ./weights/resnet50_lpf5_CNN_aug/ --log-name train.log
+
+python main.py -a resnet101 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --no-data-aug --out-dir ./weights/resnet101_CNN/ --log-name train.log
+python main.py -a resnet101 -j 16 --epochs 100 --lr 0.01 --momentum 0.9 --distortion --multi --pretrained --gpu 2 --out-dir ./weights/resnet101_CNN_aug/ --log-name train.log
+python main.py -a resnet101_lpf -f 5 -j 16 --epochs 100 --weights ./weights/resnet101_r_5.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 2 --no-data-aug --out-dir ./weights/resnet101_lpf5_CNN/ --log-name train.log
+python main.py -a resnet101_lpf -f 5 -j 16 --epochs 100 --weights ./weights/resnet101_lpf5_CNN01/model_best.pth.tar --lr 0.01 --momentum 0.9 --distortion --multi --gpu 2 --out-dir ./weights/resnet101_lpf5_CNN_aug/ --log-name train.log
+
+
+# reconsist
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_CNN01/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/baseline_CNN01/ --log-name consist.log
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_CNN01_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/baseline_CNN01_aug/ --log-name consist.log
+python main.py -a alexnet_lpf -f 2 -ec -j 16 --weights ./weights/alexnet_lpf2_CNN01/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/alexnet_lpf2_CNN01/ --log-name consist.log
+python main.py -a alexnet_lpf -f 2 -ec -j 16 --weights ./weights/alexnet_lpf2_CNN01_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/alexnet_lpf2_CNN01_aug/ --log-name consist.log
+
+python main.py -a vgg16 -j 16 -ec --weights ./weights/vgg_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/vgg_CNN/ --log-name consist.log
+python main.py -a vgg16 -j 16 -ec --weights ./weights/vgg_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/vgg_CNN_aug/ --log-name consist.log
+python main.py -a vgg16_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_lpf5_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/vgg16_lpf5_CNN/ --log-name consist.log
+python main.py -a vgg16_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/vgg16_lpf5_CNN_aug/ --log-name consist.log
+
+python main.py -a resnet50 -j 16 -ec --weights ./weights/resnet50_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/resnet50_CNN/ --log-name consist.log
+python main.py -a resnet50 -j 16 -ec --weights ./weights/resnet50_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/resnet50_CNN_aug/ --log-name consist.log
+python main.py -a resnet50_lpf -f 5 -j 16 -ec --weights ./weights/resnet50_lpf5_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/resnet50_lpf5_CNN/ --log-name consist.log
+python main.py -a resnet50_lpf -f 5 -j 16 -ec --weights ./weights/resnet50_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/resnet50_lpf5_CNN_aug/ --log-name consist.log
+
+python main.py -a resnet101 -j 16 -ec --weights ./weights/resnet101_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/resnet101_CNN/ --log-name consist.log
+python main.py -a resnet101 -j 16 -ec --weights ./weights/resnet101_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/resnet101_CNN_aug/ --log-name consist.log
+python main.py -a resnet101_lpf -f 5 -j 16 -ec --weights ./weights/resnet101_lpf5_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/resnet101_lpf5_CNN/ --log-name consist.log
+python main.py -a resnet101_lpf -f 5 -j 16 -ec --weights ./weights/resnet101_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/resnet101_lpf5_CNN_aug/ --log-name consist.log
+
+python main.py -a vgg16_bn -j 16 -ec --weights ./weights/vgg_bn_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/vgg_bn_CNN/ --log-name consist.log
+python main.py -a vgg16_bn -j 16 -ec --weights ./weights/vgg_bn_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/vgg_bn_CNN_aug/ --log-name consist.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_bn_lpf5_CNN/model_best.pth.tar --distortion --gpu 3  --out-dir ./weights/vgg16_bn_lpf5_CNN/ --log-name consist.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_bn_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/vgg16_bn_lpf5_CNN_aug/ --log-name consist.log
+
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_multi_CNN01/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/baseline_multi_CNN01/ --log-name consist.log
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_multi_CNN01_aug/model_best.pth.tar --distortion --gpu 3 --out-dir ./weights/baseline_multi_CNN01_aug/ --log-name consist.log
+
+#orig consist
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_CNN01/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_CNN01/ --log-name consist_orig.log
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_CNN01_aug/ --log-name consist_orig.log
+python main.py -a alexnet_lpf -f 2 -ec -j 16 --weights ./weights/alexnet_lpf2_CNN01/model_best.pth.tar --gpu 2  --out-dir ./weights/alexnet_lpf2_CNN01/ --log-name consist_orig.log
+python main.py -a alexnet_lpf -f 2 -ec -j 16 --weights ./weights/alexnet_lpf2_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/alexnet_lpf2_CNN01_aug/ --log-name consist_orig.log
+
+python main.py -a vgg16 -j 16 -ec --weights ./weights/vgg_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg_CNN/ --log-name consist_orig.log
+python main.py -a vgg16 -j 16 -ec --weights ./weights/vgg_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg_CNN_aug/ --log-name consist_orig.log
+python main.py -a vgg16_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg16_lpf5_CNN/ --log-name consist_orig.log
+python main.py -a vgg16_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg16_lpf5_CNN_aug/ --log-name consist_orig.log
+
+python main.py -a resnet50 -j 16 -ec --weights ./weights/resnet50_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet50_CNN/ --log-name consist_orig.log
+python main.py -a resnet50 -j 16 -ec --weights ./weights/resnet50_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet50_CNN_aug/ --log-name consist_orig.log
+python main.py -a resnet50_lpf -f 5 -j 16 -ec --weights ./weights/resnet50_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet50_lpf5_CNN/ --log-name consist_orig.log
+python main.py -a resnet50_lpf -f 5 -j 16 -ec --weights ./weights/resnet50_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet50_lpf5_CNN_aug/ --log-name consist_orig.log
+
+python main.py -a resnet101 -j 16 -ec --weights ./weights/resnet101_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet101_CNN/ --log-name consist_orig.log
+python main.py -a resnet101 -j 16 -ec --weights ./weights/resnet101_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet101_CNN_aug/ --log-name consist_orig.log
+python main.py -a resnet101_lpf -f 5 -j 16 -ec --weights ./weights/resnet101_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet101_lpf5_CNN/ --log-name consist_orig.log
+python main.py -a resnet101_lpf -f 5 -j 16 -ec --weights ./weights/resnet101_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet101_lpf5_CNN_aug/ --log-name consist_orig.log
+
+python main.py -a vgg16_bn -j 16 -ec --weights ./weights/vgg_bn_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg_bn_CNN/ --log-name consist_orig.log
+python main.py -a vgg16_bn -j 16 -ec --weights ./weights/vgg_bn_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg_bn_CNN_aug/ --log-name consist_orig.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_bn_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg16_bn_lpf5_CNN/ --log-name consist_orig.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -ec --weights ./weights/vgg16_bn_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg16_bn_lpf5_CNN_aug/ --log-name consist_orig.log
+
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_multi_CNN01/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_multi_CNN01/ --log-name consist_orig.log
+python main.py -a alexnet -ec -j 16 --weights ./weights/baseline_multi_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_multi_CNN01_aug/ --log-name consist_orig.log
+
+
+# re random rotate
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_CNN01/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_CNN01/ --log-name random_rotate.log
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_CNN01_aug/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 2 -erand -j 16 --weights ./weights/alexnet_lpf2_CNN01/model_best.pth.tar --gpu 2  --out-dir ./weights/alexnet_lpf2_CNN01/ --log-name random_rotate.log
+python main.py -a alexnet_lpf -f 2 -erand -j 16 --weights ./weights/alexnet_lpf2_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/alexnet_lpf2_CNN01_aug/ --log-name random_rotate.log
+
+python main.py -a vgg16 -j 16 -erand --weights ./weights/vgg_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg_CNN/ --log-name random_rotate.log
+python main.py -a vgg16 -j 16 -erand --weights ./weights/vgg_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg_CNN_aug/ --log-name random_rotate.log
+python main.py -a vgg16_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg16_lpf5_CNN/ --log-name random_rotate.log
+python main.py -a vgg16_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg16_lpf5_CNN_aug/ --log-name random_rotate.log
+
+python main.py -a resnet50 -j 16 -erand --weights ./weights/resnet50_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet50_CNN/ --log-name random_rotate.log
+python main.py -a resnet50 -j 16 -erand --weights ./weights/resnet50_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet50_CNN_aug/ --log-name random_rotate.log
+python main.py -a resnet50_lpf -f 5 -j 16 -erand --weights ./weights/resnet50_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet50_lpf5_CNN/ --log-name random_rotate.log
+python main.py -a resnet50_lpf -f 5 -j 16 -erand --weights ./weights/resnet50_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet50_lpf5_CNN_aug/ --log-name random_rotate.log
+
+python main.py -a resnet101 -j 16 -erand --weights ./weights/resnet101_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet101_CNN/ --log-name random_rotate.log
+python main.py -a resnet101 -j 16 -erand --weights ./weights/resnet101_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet101_CNN_aug/ --log-name random_rotate.log
+python main.py -a resnet101_lpf -f 5 -j 16 -erand --weights ./weights/resnet101_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet101_lpf5_CNN/ --log-name random_rotate.log
+python main.py -a resnet101_lpf -f 5 -j 16 -erand --weights ./weights/resnet101_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet101_lpf5_CNN_aug/ --log-name random_rotate.log
+
+python main.py -a vgg16_bn -j 16 -erand --weights ./weights/vgg_bn_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg_bn_CNN/ --log-name random_rotate.log
+python main.py -a vgg16_bn -j 16 -erand --weights ./weights/vgg_bn_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg_bn_CNN_aug/ --log-name random_rotate.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_bn_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg16_bn_lpf5_CNN/ --log-name random_rotate.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_bn_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg16_bn_lpf5_CNN_aug/ --log-name random_rotate.log
+
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_multi_CNN01/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_multi_CNN01/ --log-name random_rotate.log
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_multi_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_multi_CNN01_aug/ --log-name random_rotate.log
+
+# re random rotate distortion
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_CNN01/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/baseline_CNN01/ --log-name random_rotate_dis.log
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_CNN01_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/baseline_CNN01_aug/ --log-name random_rotate_dis.log
+python main.py -a alexnet_lpf -f 2 -erand -j 16 --weights ./weights/alexnet_lpf2_CNN01/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/alexnet_lpf2_CNN01/ --log-name random_rotate_dis.log
+python main.py -a alexnet_lpf -f 2 -erand -j 16 --weights ./weights/alexnet_lpf2_CNN01_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/alexnet_lpf2_CNN01_aug/ --log-name random_rotate_dis.log
+
+python main.py -a vgg16 -j 16 -erand --weights ./weights/vgg_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/vgg_CNN/ --log-name random_rotate_dis.log
+python main.py -a vgg16 -j 16 -erand --weights ./weights/vgg_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/vgg_CNN_aug/ --log-name random_rotate_dis.log
+python main.py -a vgg16_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_lpf5_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/vgg16_lpf5_CNN/ --log-name random_rotate_dis.log
+python main.py -a vgg16_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/vgg16_lpf5_CNN_aug/ --log-name random_rotate_dis.log
+
+python main.py -a resnet50 -j 16 -erand --weights ./weights/resnet50_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/resnet50_CNN/ --log-name random_rotate_dis.log
+python main.py -a resnet50 -j 16 -erand --weights ./weights/resnet50_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/resnet50_CNN_aug/ --log-name random_rotate_dis.log
+python main.py -a resnet50_lpf -f 5 -j 16 -erand --weights ./weights/resnet50_lpf5_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/resnet50_lpf5_CNN/ --log-name random_rotate_dis.log
+python main.py -a resnet50_lpf -f 5 -j 16 -erand --weights ./weights/resnet50_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/resnet50_lpf5_CNN_aug/ --log-name random_rotate_dis.log
+
+python main.py -a resnet101 -j 16 -erand --weights ./weights/resnet101_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/resnet101_CNN/ --log-name random_rotate_dis.log
+python main.py -a resnet101 -j 16 -erand --weights ./weights/resnet101_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/resnet101_CNN_aug/ --log-name random_rotate_dis.log
+python main.py -a resnet101_lpf -f 5 -j 16 -erand --weights ./weights/resnet101_lpf5_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/resnet101_lpf5_CNN/ --log-name random_rotate_dis.log
+python main.py -a resnet101_lpf -f 5 -j 16 -erand --weights ./weights/resnet101_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/resnet101_lpf5_CNN_aug/ --log-name random_rotate_dis.log
+
+python main.py -a vgg16_bn -j 16 -erand --weights ./weights/vgg_bn_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/vgg_bn_CNN/ --log-name random_rotate_dis.log
+python main.py -a vgg16_bn -j 16 -erand --weights ./weights/vgg_bn_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/vgg_bn_CNN_aug/ --log-name random_rotate_dis.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_bn_lpf5_CNN/model_best.pth.tar --distortion --gpu 2  --out-dir ./weights/vgg16_bn_lpf5_CNN/ --log-name random_rotate_dis.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -erand --weights ./weights/vgg16_bn_lpf5_CNN_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/vgg16_bn_lpf5_CNN_aug/ --log-name random_rotate_dis.log
+
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_multi_CNN01/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/baseline_multi_CNN01/ --log-name random_rotate_dis.log
+python main.py -a alexnet -erand -j 16 --weights ./weights/baseline_multi_CNN01_aug/model_best.pth.tar --distortion --gpu 2 --out-dir ./weights/baseline_multi_CNN01_aug/ --log-name random_rotate_dis.log
+
+# re test orig
+python main.py -a alexnet -e -j 16 --weights ./weights/baseline_CNN01/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_CNN01/ --log-name test_orig.log
+python main.py -a alexnet -e -j 16 --weights ./weights/baseline_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_CNN01_aug/ --log-name test_orig.log
+python main.py -a alexnet -e -j 16 --weights ./weights/baseline_multi_CNN01/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_multi_CNN01/ --log-name test_orig.log
+python main.py -a alexnet -e -j 16 --weights ./weights/baseline_multi_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/baseline_multi_CNN01_aug/ --log-name test_orig.log
+python main.py -a alexnet_lpf -f 2 -e -j 16 --weights ./weights/alexnet_lpf2_CNN01/model_best.pth.tar --gpu 2  --out-dir ./weights/alexnet_lpf2_CNN01/ --log-name test_orig.log
+python main.py -a alexnet_lpf -f 2 -e -j 16 --weights ./weights/alexnet_lpf2_CNN01_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/alexnet_lpf2_CNN01_aug/ --log-name test_orig.log
+
+python main.py -a vgg16 -j 16 -e --weights ./weights/vgg_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg_CNN/ --log-name test_orig.log
+python main.py -a vgg16 -j 16 -e --weights ./weights/vgg_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg_CNN_aug/ --log-name test_orig.log
+python main.py -a vgg16_lpf -f 5 -j 16 -e --weights ./weights/vgg16_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg16_lpf5_CNN/ --log-name test_orig.log
+python main.py -a vgg16_lpf -f 5 -j 16 -e --weights ./weights/vgg16_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg16_lpf5_CNN_aug/ --log-name test_orig.log
+
+python main.py -a resnet50 -j 16 -e --weights ./weights/resnet50_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet50_CNN/ --log-name test_orig.log
+python main.py -a resnet50 -j 16 -e --weights ./weights/resnet50_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet50_CNN_aug/ --log-name test_orig.log
+python main.py -a resnet50_lpf -f 5 -j 16 -e --weights ./weights/resnet50_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet50_lpf5_CNN/ --log-name test_orig.log
+python main.py -a resnet50_lpf -f 5 -j 16 -e --weights ./weights/resnet50_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet50_lpf5_CNN_aug/ --log-name test_orig.log
+
+python main.py -a resnet101 -j 16 -e --weights ./weights/resnet101_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet101_CNN/ --log-name test_orig.log
+python main.py -a resnet101 -j 16 -e --weights ./weights/resnet101_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet101_CNN_aug/ --log-name test_orig.log
+python main.py -a resnet101_lpf -f 5 -j 16 -e --weights ./weights/resnet101_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/resnet101_lpf5_CNN/ --log-name test_orig.log
+python main.py -a resnet101_lpf -f 5 -j 16 -e --weights ./weights/resnet101_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/resnet101_lpf5_CNN_aug/ --log-name test_orig.log
+
+python main.py -a vgg16_bn -j 16 -e --weights ./weights/vgg_bn_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg_bn_CNN/ --log-name test_orig.log
+python main.py -a vgg16_bn -j 16 -e --weights ./weights/vgg_bn_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg_bn_CNN_aug/ --log-name test_orig.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -e --weights ./weights/vgg16_bn_lpf5_CNN/model_best.pth.tar --gpu 2  --out-dir ./weights/vgg16_bn_lpf5_CNN/ --log-name test_orig.log
+python main.py -a vgg16_bn_lpf -f 5 -j 16 -e --weights ./weights/vgg16_bn_lpf5_CNN_aug/model_best.pth.tar --gpu 2 --out-dir ./weights/vgg16_bn_lpf5_CNN_aug/ --log-name test_orig.log
+
+
+python main.py -a inception_v3 --epochs 120 --lr 0.01 --momentum 0.9 --pretrained --gpu 2 --no-data-aug --out-dir ./weights/inception_v3_01/ --log-name train.log --distortion
+python main.py -a inception_v3 --epochs 120 --lr 0.01 --momentum 0.9 --pretrained --gpu 2 --out-dir ./weights/inception_v3_01_aug/ --log-name train.log --distortion
+
+python main.py -a inception_v3 -ec --weights ./weights/inception_v3_01/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/inception_v3_01/ --log-name consist.log
+python main.py -a inception_v3 -ec --weights ./weights/inception_v3_01_aug/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/inception_v3_01_aug/ --log-name consist.log
+
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_aug_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --distortion
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --multi --distortion
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --distortion --no-data-aug
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_multi_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --multi --distortion --no-data-aug
+
+python main1.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_baseline_aug_w2_orig/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn_orig.pth.tar --distortion
+python main1.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_baseline_aug_multi_w2_orig/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn_orig.pth.tar --multi --distortion
+python main1.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_baseline_w2_orig/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn_orig.pth.tar --distortion --no-data-aug
+python main1.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_baseline_multi_w2_orig/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn_orig.pth.tar --multi --distortion --no-data-aug
+
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_aug_w2_max/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --distortion
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2_max/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --multi --distortion
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_w2_max/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --distortion --no-data-aug
+python main.py -a alexrotatenet -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 0 --out-dir ./weights/stn_baseline_multi_w2_max/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_stn.pth.tar --multi --distortion --no-data-aug
+
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_w2/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_aug_w2/ --log-name consist.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_multi_w2/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2/ --log-name consist.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_w2/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_w2/ --log-name consist.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_multi_w2/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_multi_w2/ --log-name consist.log
+
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_aug_w2/ --log-name consist_orig.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_multi_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2/ --log-name consist_orig.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_w2/ --log-name consist_orig.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_multi_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_multi_w2/ --log-name consist_orig.log
+
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_w2_orig/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_aug_w2_orig/ --log-name consist.log
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_multi_w2_orig/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2_orig/ --log-name consist.log
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_w2_orig/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_w2_orig/ --log-name consist.log
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_multi_w2_orig/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_multi_w2_orig/ --log-name consist.log
+
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_w2_orig/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_aug_w2_orig/ --log-name consist_orig.log
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_multi_w2_orig/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2_orig/ --log-name consist_orig.log
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_w2_orig/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_w2_orig/ --log-name consist_orig.log
+python main1.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_multi_w2_orig/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_multi_w2_orig/ --log-name consist_orig.log
+
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_w2_max/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_aug_w2_max/ --log-name consist.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_multi_w2_max/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2_max/ --log-name consist.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_w2_max/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_w2_max/ --log-name consist.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_multi_w2_max/model_best.pth.tar --distortion --gpu 0 --out-dir ./weights/stn_baseline_multi_w2_max/ --log-name consist.log
+
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_w2_max/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_aug_w2_max/ --log-name consist_orig.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_aug_multi_w2_max/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_aug_multi_w2_max/ --log-name consist_orig.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_w2_max/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_w2_max/ --log-name consist_orig.log
+python main.py -a alexrotatenet -stn -ec --weights ./weights/stn_baseline_multi_w2_max/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_baseline_multi_w2_max/ --log-name consist_orig.log

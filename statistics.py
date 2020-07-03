@@ -1,0 +1,20 @@
+import torch
+
+model_dict = torch.load('./weights/stn_vggbn0_00001_multi/model_best.pth.tar', map_location='cuda:0')
+print('arch:',model_dict['arch'])
+print('epoch:',model_dict['epoch'])
+print('best_acc1:',model_dict['best_acc1'])
+# print('state_dict:',model_dict['state_dict'])
+# model_dict = torch.load('./weights/stn_res101_5_00001_aug/model_best.pth.tar', map_location='cuda:0')
+# print('arch:',model_dict['arch'])
+# print('epoch:',model_dict['epoch'])
+# print('best_acc1:',model_dict['best_acc1'])
+# model_dict = torch.load('./weights/stn_res101_5_0001/model_best.pth.tar', map_location='cuda:0')
+# print('arch:',model_dict['arch'])
+# print('epoch:',model_dict['epoch'])
+# print('best_acc1:',model_dict['best_acc1'])
+# model_dict = torch.load('./weights/stn_res101_5_0001_aug/model_best.pth.tar', map_location='cuda:0')
+# print('arch:',model_dict['arch'])
+# print('epoch:',model_dict['epoch'])
+# print('best_acc1:',model_dict['best_acc1'])
+

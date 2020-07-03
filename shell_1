@@ -1,0 +1,117 @@
+
+python main.py -a alexnet_lpf -stn -f 2 --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_alex0001_lpf2_aug_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_lpf2_stn.pth.tar --distortion
+python main.py -a alexnet_lpf -stn -f 2 --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_alex0001_lpf2_aug_multi_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_lpf2_stn.pth.tar --multi --distortion
+python main.py -a alexnet_lpf -stn -f 2 --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_alex0001_lpf2_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_lpf2_stn.pth.tar --distortion --no-data-aug
+python main.py -a alexnet_lpf -stn -f 2 --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_alex0001_lpf2_multi_w2/ --log-name train.log --weight-decay 1e-2 --weights ./weights/alexnet_lpf2_stn.pth.tar --multi --distortion --no-data-aug
+
+python main.py -a alexnet_lpf -stn -f 2 -ec --weights ./weights/stn_alex0001_lpf2_aug_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_alex0001_lpf2_aug_w2/ --log-name consist_orig.log
+python main.py -a alexnet_lpf -stn -f 2 -ec --weights ./weights/stn_alex0001_lpf2_aug_multi_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_alex0001_lpf2_aug_multi_w2/ --log-name consist_orig.log
+python main.py -a alexnet_lpf -stn -f 2 -ec --weights ./weights/stn_alex0001_lpf2_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_alex0001_lpf2_w2/ --log-name consist_orig.log
+python main.py -a alexnet_lpf -stn -f 2 -ec --weights ./weights/stn_alex0001_lpf2_multi_w2/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_alex0001_lpf2_multi_w2/ --log-name consist_orig.log
+
+
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate50_aug_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --distortion
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate50_aug_multi_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --multi --distortion
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate50_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --distortion --no-data-aug
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate50_multi_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --multi --distortion --no-data-aug
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate101_aug_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --distortion
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate101_aug_multi_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --multi --distortion
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate101_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --distortion --no-data-aug
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 3 --out-dir ./weights/stn_resrotate101_multi_w2_001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --multi --distortion --no-data-aug
+
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate50_aug_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --distortion
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate50_aug_multi_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --multi --distortion
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate50_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --distortion --no-data-aug
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate50_multi_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet50_stn.pth.tar --multi --distortion --no-data-aug
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate101_aug_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --distortion
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate101_aug_multi_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --multi --distortion
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate101_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --distortion --no-data-aug
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_resrotate101_multi_w2_0001/ --log-name train.log --weight-decay 1e-2 --weights ./weights/resnet101_stn.pth.tar --multi --distortion --no-data-aug
+
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate50_aug_multi_w3_0001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet50_stn.pth.tar --multi --distortion
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate50_multi_w3_0001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet50_stn.pth.tar --multi --distortion --no-data-aug
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate101_aug_multi_w3_0001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet101_stn.pth.tar --multi --distortion
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.0001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate101_multi_w3_0001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet101_stn.pth.tar --multi --distortion --no-data-aug
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate50_aug_multi_w3_001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet50_stn.pth.tar --multi --distortion
+python main.py -a resrotate50 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate50_multi_w3_001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet50_stn.pth.tar --multi --distortion --no-data-aug
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate101_aug_multi_w3_001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet101_stn.pth.tar --multi --distortion
+python main.py -a resrotate101 -stn --epochs 100 --lr 0.001 --momentum 0.9 --gpu 2 --out-dir ./weights/stn_resrotate101_multi_w3_001/ --log-name train.log --weight-decay 1e-3 --weights ./weights/resnet101_stn.pth.tar --multi --distortion --no-data-aug
+
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_w2_001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w2_001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_w2_001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w2_001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_w2_001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w2_001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_w2_001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w2_001/ --log-name consist.log --distortion
+
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_w2_0001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w2_0001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_w2_0001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w2_0001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_w2_0001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w2_0001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_w2_0001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w2_0001/ --log-name consist.log --distortion
+
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w3_001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w3_001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w3_001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w3_001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w3_0001/ --log-name consist.log --distortion
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w3_0001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w3_0001/ --log-name consist.log --distortion
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w3_0001/ --log-name consist.log --distortion
+
+
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_w2_001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w2_001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_w2_001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w2_001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_w2_001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w2_001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_w2_001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w2_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w2_001/ --log-name consist_orig.log
+
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_w2_0001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w2_0001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_w2_0001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w2_0001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_w2_0001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w2_0001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_w2_0001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w2_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w2_0001/ --log-name consist_orig.log
+
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w3_001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w3_001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w3_001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w3_001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w3_001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_aug_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_aug_multi_w3_0001/ --log-name consist_orig.log
+python main.py -a resrotate50 -stn -ec --weights ./weights/stn_resrotate50_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate50_multi_w3_0001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_aug_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_aug_multi_w3_0001/ --log-name consist_orig.log
+python main.py -a resrotate101 -stn -ec --weights ./weights/stn_resrotate101_multi_w3_0001/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_resrotate101_multi_w3_0001/ --log-name consist_orig.log
+
+resnet101_stn_5.pth.tar
+python main.py -a resnet101_lpf -stn -f 5 --epochs 40 --lr 0.001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_res101_5_001/ --log-name train.log --weight-decay 1e-4 --weights ./weights/resnet101_stn0_5.pth.tar --distortion --multi --no-data-aug
+python main.py -a resnet101_lpf -stn -f 5 --epochs 40 --lr 0.0001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_res101_5_0001_aug_1000/ --log-name train.log --weight-decay 1e-4 --weights ./weights/resnet101_stn0_5.pth.tar --distortion
+
+python main.py -a resnet101_lpf -stn -f 5 -ec --weights ./weights/stn_res101_5_0001_aug_1000/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_res101_5_0001_aug_1000/ --log-name consist.log --distortion
+python main.py -a resnet101_lpf -stn -f 5 -ec --weights ./weights/resnet101_lpf5_CNN_aug/model_best.pth.tar --gpu 0 --out-dir ./weights/resnet101_lpf5_CNN_aug/ --log-name consist_orig.log
+
+python main.py -a vgg16_bn_rotate -stn -f 5 --epochs 40 --lr 0.00001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_vggbn0_00001_aug/ --log-name train.log --weights ./weights/vgg16_bn_stn0.pth.tar --distortion
+python main.py -a vgg16_bn_rotate -stn -f 5 --epochs 40 --lr 0.00001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_vggbn0_00001_aug_multi/ --log-name train.log --weights ./weights/vgg16_bn_stn0.pth.tar --distortion --multi
+python main.py -a vgg16_bn_rotate -stn -f 5 --epochs 40 --lr 0.00001 --momentum 0.9 --gpu 1 --out-dir ./weights/stn_vggbn0_00001_multi/ --log-name train.log --weights ./weights/vgg16_bn_stn0.pth.tar --distortion --multi --no-data-aug
+
+
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn0_00001_multi/model_best.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn0_00001_multi/ --log-name consist.log --distortion
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn0_00001_multi/checkpoint_000.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn0_00001_multi/ --log-name consist0.log --distortion
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn0_00001_multi/checkpoint_010.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn0_00001_multi/ --log-name consist1.log --distortion
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn0_00001_multi/checkpoint_020.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn0_00001_multi/ --log-name consist2.log --distortion
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn0_00001_multi/checkpoint_030.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn0_00001_multi/ --log-name consist3.log --distortion
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn0_00001_multi/checkpoint.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn0_00001_multi/ --log-name consistcheck.log --distortion
+
+
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn_0001_aug_fre/checkpoint_000.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn_0001_aug_fre/ --log-name consist1.log --distortion
+python main.py -a vgg16_bn_rotate -stn -f 5 -ec --weights ./weights/stn_vggbn_0001_aug_fre/checkpoint_000.pth.tar --gpu 0 --out-dir ./weights/stn_vggbn_0001_aug_fre/ --log-name consist0_orig.log
+

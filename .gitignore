@@ -1,0 +1,12 @@
+*.npy
+*.jpg
+*.png
+*.pth.tar
+*.tar.gz
+*.log
+*.pth
+*.pdf
+*.mdb
+*.DS_Store
+*.idea
+*.xml
